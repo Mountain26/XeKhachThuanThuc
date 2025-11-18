@@ -11,7 +11,7 @@ export function Navbar() {
           {/* Logo placeholder */}
           <div className="navbar-brand">
             <div className="navbar-logo">
-              <img className="logoTT" src="./src/components/assets/Logo TT.jpg"/>
+              <img className="logoTT" src="https://www.messenger.com/751ed73c-e301-4a4a-b0ee-398cafe74911"/>
             </div>
             <span>Nhà xe Thuận Thực</span>
           </div>

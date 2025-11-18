@@ -77,10 +77,14 @@
 .route-media-placeholder {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #94a3b8;
+  overflow: hidden;
+}
+
+.route-media-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .route-media-overlay {

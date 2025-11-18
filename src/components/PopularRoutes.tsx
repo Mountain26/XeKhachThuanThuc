@@ -53,10 +53,13 @@ export function PopularRoutes() {
               {/* Image placeholder */}
               <div className="route-media">
                 <div className="route-media-placeholder">
-                  <span>Ảnh minh họa tuyến xe</span>
+                  <img
+                    src="https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/539355485_1198959562040848_9198228117422014222_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGaPuFAwxFnGFbth200kBevhaETSgzlmUuFoRNKDOWZS9CEdNf5ohUbzEqip2RmBI1mb_v-8fUJV_ua_FA51P_M&_nc_ohc=C1RX9YdBMCkQ7kNvwF77e2G&_nc_oc=AdkwKUPgrdk4RmBXAy1ptmMSh7Psm-yZ60iiydosIujM0aABbFZtd8v2iQ-pkSP0lJY&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=8IX1S-8s95y0v1yussgM3g&oh=00_Afj7HG-4KpGzUkVXcNn_eAxxRW507e_hWuqV-xyOQJPHPg&oe=69221869"
+                    alt="Hình ảnh xe Thuận Thực"
+                  />
                 </div>
                 <div className="route-media-overlay" />
-                
+
                 {/* Price badge */}
                 <div className="route-price">
                   {route.price}
