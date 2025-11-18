@@ -5,23 +5,23 @@ export function ServiceSection() {
   const services = [
     {
       icon: Shield,
-      title: "Service Title 1",
-      description: "Service description placeholder text explaining the benefit and features",
+      title: "An toàn chuẩn 5 sao",
+      description: "Bảo hiểm hành khách đầy đủ, tài xế nhiều kinh nghiệm và kiểm tra xe định kỳ trước mỗi chuyến",
     },
     {
       icon: Armchair,
-      title: "Service Title 2",
-      description: "Service description placeholder text explaining the benefit and features",
+      title: "Giường nằm cao cấp",
+      description: "Nệm da kháng khuẩn, rèm riêng tư, chăn gối sạch sẽ giúp bạn nghỉ ngơi thoải mái",
     },
     {
       icon: Wifi,
-      title: "Service Title 3",
-      description: "Service description placeholder text explaining the benefit and features",
+      title: "Wifi & sạc tiện lợi",
+      description: "Trang bị wifi miễn phí, cổng USB và điện thoại hỗ trợ suốt hành trình",
     },
     {
       icon: Coffee,
-      title: "Service Title 4",
-      description: "Service description placeholder text explaining the benefit and features",
+      title: "Nước uống - khăn lạnh",
+      description: "Phục vụ nước suối, khăn lạnh và điểm dừng nghỉ hợp lý để bạn luôn tỉnh táo",
     },
   ];
 
@@ -36,9 +36,9 @@ export function ServiceSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-[#1A1A1A] mb-3">Our Services</h2>
+          <h2 className="text-[#1A1A1A] mb-3">Tiện ích nổi bật</h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
-            Experience premium quality service with modern amenities and professional care
+            Trải nghiệm chất lượng khác biệt với hệ thống xe đời mới và đội ngũ phục vụ tận tâm
           </p>
         </motion.div>
 
@@ -58,7 +58,7 @@ export function ServiceSection() {
                 {/* Image placeholder */}
                 <div className="mb-4 h-32 bg-slate-100 rounded-xl overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-slate-400 text-sm">IMAGE HERE</span>
+                    <span className="text-slate-400 text-sm">Ảnh tiện ích minh họa</span>
                   </div>
                 </div>
 

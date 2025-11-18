@@ -27,28 +27,26 @@ export function HeroSection() {
             {/* Large heading */}
             <div className="space-y-3">
               <h1 className="text-[#D62828]">
-                TITLE HERE
+                Dịch vụ xe giường nằm cao cấp
               </h1>
               <h2 className="text-[#1A1A1A]">
-                MAIN HEADING PLACEHOLDER
+                Thuận Thực đồng hành cùng bạn trên mọi hành trình Hà Giang
               </h2>
             </div>
 
             {/* Subtitle */}
             <p className="text-slate-600 max-w-lg">
-              Subtitle placeholder text goes here. This is a brief description
-              that explains the service benefits and why customers should choose
-              this bus company for their travel needs.
+              Đặt vé trực tuyến trong vài giây, lên xe đúng giờ, trải nghiệm tiện nghi hiện đại và đội ngũ tài xế tận tâm. Chúng tôi cam kết mang đến chuyến đi an toàn, êm ái và đúng lịch trình.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-[#D62828] hover:bg-[#B01F1F] shadow-lg shadow-[#D62828]/30">
-                BOOK NOW
+                Đặt vé ngay
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               <Button size="lg" variant="outline" className="border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white">
-                SECONDARY BUTTON
+                Xem lịch trình
               </Button>
             </div>
 
@@ -58,8 +56,8 @@ export function HeroSection() {
                 <Phone className="w-6 h-6 text-white" />
               </div>
               <div>
-                <div className="text-slate-500 text-sm">Hotline Placeholder</div>
-                <div className="text-[#1A1A1A]">1900 XXXX</div>
+                <div className="text-slate-500 text-sm">Tổng đài 24/7</div>
+                <div className="text-[#1A1A1A]">1900 63 63 71</div>
               </div>
             </div>
           </motion.div>
@@ -74,7 +72,7 @@ export function HeroSection() {
             {/* Curved image frame for landscape */}
             <div className="relative aspect-[4/3] bg-slate-300 rounded-3xl lg:rounded-l-[3rem] shadow-2xl overflow-hidden border-4 border-white">
               <div className="absolute inset-0 flex items-center justify-center bg-slate-200">
-                <span className="text-slate-400 text-lg">LANDSCAPE IMAGE HERE</span>
+                <span className="text-slate-400 text-lg">Ảnh phong cảnh tuyến Hà Giang</span>
               </div>
               {/* Decorative overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#D62828]/10 to-transparent" />
@@ -109,8 +107,8 @@ export function HeroSection() {
             <div className="relative bg-slate-200 rounded-2xl shadow-2xl overflow-hidden aspect-[16/9] lg:aspect-[21/9] border-4 border-white">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-slate-400 text-lg mb-2">BUS IMAGE HERE</div>
-                  <div className="text-slate-400 text-sm">(3/4 angle perspective)</div>
+                  <div className="text-slate-400 text-lg mb-2">Hình ảnh xe Thuận Thực</div>
+                  <div className="text-slate-400 text-sm">(góc nhìn 3/4 hiện đại)</div>
                 </div>
               </div>
               {/* Perspective effect overlay */}

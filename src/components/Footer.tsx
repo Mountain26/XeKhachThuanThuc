@@ -16,13 +16,12 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-[#D62828] to-[#B01F1F] rounded-lg flex items-center justify-center">
-                <span className="text-white text-xs">LOGO</span>
+                <span className="text-white text-xs">TT</span>
               </div>
-              <span className="text-white">Company Name</span>
+              <span className="text-white">Nhà xe Thuận Thực</span>
             </div>
             <p className="text-slate-400 text-sm mb-4">
-              Company description placeholder text. Leading bus
-              service provider with years of experience.
+              Hơn 10 năm phục vụ tuyến Hà Nội - Hà Giang với phương châm an toàn, đúng giờ và tận tâm.
             </p>
             {/* Social icons */}
             <div className="flex gap-3">
@@ -40,14 +39,14 @@ export function Footer() {
 
           {/* Quick links */}
           <div>
-            <h4 className="text-white mb-4">Quick Links</h4>
+            <h4 className="text-white mb-4">Liên kết nhanh</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  About Us
+                  Giới thiệu
                 </a>
               </li>
               <li>
@@ -55,7 +54,7 @@ export function Footer() {
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  Routes
+                  Lịch trình
                 </a>
               </li>
               <li>
@@ -63,7 +62,7 @@ export function Footer() {
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  Booking Policy
+                  Chính sách đặt vé
                 </a>
               </li>
               <li>
@@ -71,7 +70,7 @@ export function Footer() {
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  Terms & Conditions
+                  Điều khoản sử dụng
                 </a>
               </li>
               <li>
@@ -79,7 +78,7 @@ export function Footer() {
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  Privacy Policy
+                  Chính sách bảo mật
                 </a>
               </li>
             </ul>
@@ -87,14 +86,14 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white mb-4">Services</h4>
+            <h4 className="text-white mb-4">Dịch vụ</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  Ticket Booking
+                  Đặt vé online
                 </a>
               </li>
               <li>
@@ -102,7 +101,7 @@ export function Footer() {
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  Route Information
+                  Thông tin tuyến xe
                 </a>
               </li>
               <li>
@@ -110,7 +109,7 @@ export function Footer() {
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  Customer Support
+                  Hỗ trợ khách hàng
                 </a>
               </li>
               <li>
@@ -118,7 +117,7 @@ export function Footer() {
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  Special Offers
+                  Ưu đãi - khuyến mãi
                 </a>
               </li>
               <li>
@@ -126,7 +125,7 @@ export function Footer() {
                   href="#"
                   className="text-slate-400 hover:text-[#D62828] transition-colors text-sm"
                 >
-                  Corporate Services
+                  Dịch vụ doanh nghiệp
                 </a>
               </li>
             </ul>
@@ -135,26 +134,25 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-white mb-4">
-              Contact Placeholder
+              Liên hệ
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#D62828] mt-0.5 flex-shrink-0" />
                 <span className="text-slate-400 text-sm">
-                  Address placeholder text here, City Name,
-                  Country
+                  123 Nguyễn Trãi, phường Trung Văn, quận Nam Từ Liêm, Hà Nội
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#D62828] flex-shrink-0" />
                 <span className="text-slate-400 text-sm">
-                  1900 XXXX
+                  1900 63 63 71
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#D62828] flex-shrink-0" />
                 <span className="text-slate-400 text-sm">
-                  contact@placeholder.com
+                  hotro@thuanthuc.vn
                 </span>
               </li>
             </ul>
@@ -165,26 +163,26 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm">
-              © 2025 Bus Company Name. All rights reserved.
+              © 2025 Nhà xe Thuận Thực. Đã đăng ký bản quyền.
             </p>
             <div className="flex gap-6">
               <a
                 href="#"
                 className="text-slate-400 hover:text-[#D62828] text-sm transition-colors"
               >
-                Privacy Policy
+                Chính sách bảo mật
               </a>
               <a
                 href="#"
                 className="text-slate-400 hover:text-[#D62828] text-sm transition-colors"
               >
-                Terms of Service
+                Điều khoản dịch vụ
               </a>
               <a
                 href="#"
                 className="text-slate-400 hover:text-[#D62828] text-sm transition-colors"
               >
-                Cookie Policy
+                Chính sách cookie
               </a>
             </div>
           </div>

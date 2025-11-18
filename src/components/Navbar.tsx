@@ -9,28 +9,28 @@ export function Navbar() {
           {/* Logo placeholder */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-[#D62828] to-[#B01F1F] rounded-lg flex items-center justify-center">
-              <span className="text-white text-xs">LOGO</span>
+              <span className="text-white text-xs">TT</span>
             </div>
-            <span className="text-[#1A1A1A]">Bus Company Name</span>
+            <span className="text-[#1A1A1A]">Nhà xe Thuận Thực</span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <a href="#" className="text-[#1A1A1A] hover:text-[#D62828] transition-colors">
-              Home
+              Trang chủ
             </a>
             <a href="#" className="text-[#1A1A1A] hover:text-[#D62828] transition-colors">
-              Routes
+              Tuyến xe
             </a>
             <a href="#" className="text-[#1A1A1A] hover:text-[#D62828] transition-colors">
-              Booking
+              Đặt vé
             </a>
             <a href="#" className="text-[#1A1A1A] hover:text-[#D62828] transition-colors">
-              Contact
+              Liên hệ
             </a>
             <Button size="sm" className="bg-[#D62828] hover:bg-[#B01F1F]">
               <Phone className="w-4 h-4 mr-2" />
-              Contact
+              Gọi hotline
             </Button>
           </div>
 

@@ -12,8 +12,8 @@ export function ContactButtons() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h3 className="text-[#1A1A1A] mb-2">Contact Us Now</h3>
-          <p className="text-slate-600">Choose your preferred contact method</p>
+          <h3 className="text-[#1A1A1A] mb-2">Liên hệ với chúng tôi</h3>
+          <p className="text-slate-600">Chọn kênh phù hợp để được hỗ trợ ngay</p>
         </motion.div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-3xl mx-auto">
