@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Clock, ArrowRight } from "lucide-react";
+import { Clock, ArrowDown, ArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -74,7 +74,7 @@ export function PopularRoutes() {
                     <span>{route.from}</span>
                   </div>
                   <div className="route-connector">
-                    <ArrowRight />
+                    <ArrowDown />
                   </div>
                   <div className="route-point">
                     <div className="route-point__dot route-point__dot--destination" />
@@ -89,7 +89,6 @@ export function PopularRoutes() {
 
                 <Button className="route-button">
                   Đặt vé tuyến này
-                  <ArrowRight />
                 </Button>
               </div>
               </motion.div>
@@ -114,7 +113,7 @@ export function PopularRoutes() {
               onClick={() => setShowAll((prev) => !prev)}
             >
               {showAll ? "Thu gọn" : "Xem toàn bộ tuyến"}
-              <ArrowRight />
+              {showAll ? <ArrowUp /> : <ArrowDown />}
             </Button>
           </motion.div>
         )}

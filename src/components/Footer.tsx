@@ -18,7 +18,7 @@ export function Footer() {
           <div>
             <div className="footer-brand">
               <div className="footer-logo">
-                <span>TT</span>
+                <img className="logoTT" src="https://scontent.fhan2-5.fna.fbcdn.net/v/t1.15752-9/582234910_1363044145567577_688089787407289729_n.png?stp=dst-png_s2048x2048&_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFy-DZDpxrjKfGOLgLrwe2bhABG-QPaklSEAEb5A9qSVCNKhw6-hrB-YjU5CzXUuTarHnAxmS_cRwBUhmlgqrD-&_nc_ohc=41uStWEz3C0Q7kNvwGEDgjo&_nc_oc=Adm6k8xhSFH7B6DkD4Z6Yal5l7Br1mRq9Zvcgu7piFP2QsvAKXpYw10f4SZisIKxqr4&_nc_zt=23&_nc_ht=scontent.fhan2-5.fna&oh=03_Q7cD3wFN7zVmDL4airhQ-8wUNW4zn9-4B-t-JJKrRb-FtrCXew&oe=6943F77B"/>
               </div>
               <span className="footer-text">Nhà xe Thuận Thực</span>
             </div>

@@ -19,8 +19,9 @@ export function ContactButtons() {
         </motion.div>
 
         <div className="contact-actions">
-          {/* Gọi Viettel Button */}
-          <motion.button
+          {/* Gọi tổng đài */}
+          <motion.a
+            href="tel:0983250900"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -32,11 +33,12 @@ export function ContactButtons() {
             <div className="contact-button__icon">
               <Phone />
             </div>
-            <span>Gọi Viettel</span>
-          </motion.button>
+            <span>Gọi tổng đài</span>
+          </motion.a>
 
-          {/* Gọi Vina Button */}
-          <motion.button
+          {/* Gọi Viettel */}
+          <motion.a
+            href="tel:0835227228"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -48,11 +50,14 @@ export function ContactButtons() {
             <div className="contact-button__icon">
               <Phone />
             </div>
-            <span>Gọi Vina</span>
-          </motion.button>
+            <span>Gọi Viettel</span>
+          </motion.a>
 
-          {/* Nhắn Zalo Button */}
-          <motion.button
+          {/* Liên hệ Zalo */}
+          <motion.a
+            href="http://zalo.me/nhaxethuanthuc23"
+            target="_blank"
+            rel="noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -64,8 +69,8 @@ export function ContactButtons() {
             <div className="contact-button__icon">
               <MessageCircle />
             </div>
-            <span>Nhắn Zalo</span>
-          </motion.button>
+            <span>Liên hệ Zalo</span>
+          </motion.a>
         </div>
       </div>
     </section>

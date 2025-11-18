@@ -5,6 +5,13 @@ import { motion } from "motion/react";
 import "./HeroSection.css";
 
 export function HeroSection() {
+  const scrollToBooking = () => {
+    const el = document.getElementById("dat-ve");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="hero-section">
       {/* Decorative curved shapes */}
@@ -43,11 +50,19 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="hero-cta">
-              <Button size="lg" className="hero-cta-primary">
-                Đặt vé ngay
-                <ArrowRight />
+              <Button size="lg" className="hero-cta-primary" asChild>
+                <a href="tel:0983250900">
+                  Đặt vé ngay
+                  <ArrowRight />
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="hero-cta-secondary">
+              <Button
+                size="lg"
+                variant="outline"
+                className="hero-cta-secondary"
+                type="button"
+                onClick={scrollToBooking}
+              >
                 Xem lịch trình
               </Button>
             </div>
@@ -106,7 +121,7 @@ export function HeroSection() {
           <div className="hero-bus-frame">
             <div className="hero-bus-placeholder">
               <div>
-                <img src="https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/539355485_1198959562040848_9198228117422014222_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGaPuFAwxFnGFbth200kBevhaETSgzlmUuFoRNKDOWZS9CEdNf5ohUbzEqip2RmBI1mb_v-8fUJV_ua_FA51P_M&_nc_ohc=C1RX9YdBMCkQ7kNvwF77e2G&_nc_oc=AdkwKUPgrdk4RmBXAy1ptmMSh7Psm-yZ60iiydosIujM0aABbFZtd8v2iQ-pkSP0lJY&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=8IX1S-8s95y0v1yussgM3g&oh=00_Afj7HG-4KpGzUkVXcNn_eAxxRW507e_hWuqV-xyOQJPHPg&oe=69221869" alt="Hình ảnh xe Thuận Thực" />
+                <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/546107152_1208961634373974_7912001924818000482_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGME48F9NO9nIZ3bE3FCoXDiHUjDMG-UqCIdSMMwb5SoI6xURU7rdl4RPNe-SzKpYPMVrJgEZ4OM6JgWgu8385h&_nc_ohc=COGFwSD5sx0Q7kNvwEhauyu&_nc_oc=AdnxlDaZyFFb8jVSYoz_ewkJPQAuXEkRB9FNW_1aIsmr8S5A4sxr6qk9qxSBDARTg1k&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=FhOZfBw7WWAIJKOvSh5JrQ&oh=00_AfgACLPX0EN7tvQdCMHbzxqAfrXB7yCslDEKL8PRxfa6og&oe=69224A10" alt="Hình ảnh xe Thuận Thực" />
               </div>
             </div>
             <div className="hero-bus-overlay" />

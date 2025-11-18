@@ -60,7 +60,7 @@ export function ServiceSection() {
                 {/* Image placeholder */}
                 <div className="service-image">
                   <img
-                    src="https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/539355485_1198959562040848_9198228117422014222_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGaPuFAwxFnGFbth200kBevhaETSgzlmUuFoRNKDOWZS9CEdNf5ohUbzEqip2RmBI1mb_v-8fUJV_ua_FA51P_M&_nc_ohc=C1RX9YdBMCkQ7kNvwF77e2G&_nc_oc=AdkwKUPgrdk4RmBXAy1ptmMSh7Psm-yZ60iiydosIujM0aABbFZtd8v2iQ-pkSP0lJY&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=8IX1S-8s95y0v1yussgM3g&oh=00_Afj7HG-4KpGzUkVXcNn_eAxxRW507e_hWuqV-xyOQJPHPg&oe=69221869"
+                    src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/528152085_1181214270482044_2082145697686854411_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEUg8SqAnj1cod-PnXz8_2xOxHZ3aUbfT47EdndpRt9Put2zBRKwd96EtdkvLHVOKtYDhbO-FBD6S71vwLsqjo6&_nc_ohc=Hvuk4vOYc1AQ7kNvwGHOi9C&_nc_oc=AdlwY84VyfZggJX06LlpECyRLlB7xoZ5DJZvX3wjZDKJPPkbiySXhoQXWKEriTXwgOE&_nc_zt=23&_nc_ht=scontent.fhan2-5.fna&_nc_gid=Jdi9_FaNbFhLv1FZPjOeWA&oh=00_Afj4vrea6jFcwEfyPNFktOxdzbYdP5P_XjCkc9C02TQX7A&oe=69225B5E"
                     alt="Hình ảnh xe Thuận Thực"
                   />
                 </div>
