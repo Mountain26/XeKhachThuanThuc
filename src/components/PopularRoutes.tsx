@@ -160,8 +160,10 @@ export function PopularRoutes() {
                   </div>
                 </div>
 
-                <Button className="route-button">
-                  Đặt vé
+                <Button className="route-button" asChild>
+                  <a href="tel:0983250900">
+                    Đặt vé
+                  </a>
                 </Button>
               </div>
               </motion.div>

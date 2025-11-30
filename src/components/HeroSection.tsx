@@ -114,14 +114,14 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="hero-bus-wrapper"
+          className="hero-bus-wrapper hero-bus-wrapper--full"
         >
           <div className="hero-bus-highlight" />
           {/* Bus frame with perspective */}
           <div className="hero-bus-frame">
             <div className="hero-bus-placeholder">
               <div>
-                <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/546107152_1208961634373974_7912001924818000482_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGME48F9NO9nIZ3bE3FCoXDiHUjDMG-UqCIdSMMwb5SoI6xURU7rdl4RPNe-SzKpYPMVrJgEZ4OM6JgWgu8385h&_nc_ohc=COGFwSD5sx0Q7kNvwEhauyu&_nc_oc=AdnxlDaZyFFb8jVSYoz_ewkJPQAuXEkRB9FNW_1aIsmr8S5A4sxr6qk9qxSBDARTg1k&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=FhOZfBw7WWAIJKOvSh5JrQ&oh=00_AfgACLPX0EN7tvQdCMHbzxqAfrXB7yCslDEKL8PRxfa6og&oe=69224A10" alt="Hình ảnh xe Thuận Thực" />
+              <img src="src/components/assets/NXTT.png" alt="Hình ảnh xe Thuận Thực" />
               </div>
             </div>
             <div className="hero-bus-overlay" />

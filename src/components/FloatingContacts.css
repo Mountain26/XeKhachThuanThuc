@@ -1,0 +1,151 @@
+.floating-contacts {
+  position: fixed;
+  left: 1rem;
+  bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 100;
+}
+
+@media (max-width: 480px) {
+  .floating-contacts {
+    left: 0.75rem;
+    bottom: 1rem;
+    gap: 0.6rem;
+  }
+}
+
+.floating-contacts__item {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(26, 26, 26, 0.24);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  opacity: 0.95;
+  animation: floating-contacts-wiggle 3.4s ease-in-out infinite;
+  will-change: transform;
+  position: relative;
+  overflow: visible;
+  background: var(--floating-bg);
+}
+
+.floating-contacts__item:hover {
+  animation-play-state: paused;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(26, 26, 26, 0.28);
+  opacity: 1;
+}
+
+.floating-contacts__item::before,
+.floating-contacts__item::after {
+  content: "";
+  position: absolute;
+  inset: -0.55rem;
+  border-radius: 999px;
+  border: 2px solid var(--floating-ring, rgba(255, 255, 255, 0.35));
+  opacity: 0;
+  transform: scale(0.6);
+  animation: floating-contacts-pulse 3.5s ease-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-contacts__item::after {
+  animation-delay: 1.75s;
+}
+
+.floating-contacts__item:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.floating-contacts__item:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.floating-contacts__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.floating-contacts__icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.floating-contacts__icon--zalo {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.floating-contacts__icon-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.floating-contacts__item--zalo {
+  --floating-bg: radial-gradient(circle at 30% 30%, #59c6ff, #0085db);
+  --floating-ring: rgba(0, 133, 219, 0.45);
+}
+
+.floating-contacts__item--hotline {
+  --floating-bg: radial-gradient(circle at 30% 30%, #ffae42, #ff6b00);
+  --floating-ring: rgba(255, 142, 0, 0.45);
+}
+
+.floating-contacts__item--facebook {
+  --floating-bg: radial-gradient(circle at 30% 30%, #4d8dff, #1b4fcd);
+  --floating-ring: rgba(27, 79, 205, 0.45);
+}
+
+@keyframes floating-contacts-wiggle {
+  0%,
+  70%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  10% {
+    transform: translateY(-2px) rotate(-6deg);
+  }
+  20% {
+    transform: translateY(1px) rotate(4deg);
+  }
+  30% {
+    transform: translateY(-1px) rotate(-3deg);
+  }
+  40% {
+    transform: translateY(1px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-1px) rotate(-1deg);
+  }
+  60% {
+    transform: translateY(1px) rotate(1deg);
+  }
+}
+
+@keyframes floating-contacts-pulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.7);
+  }
+  60% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}

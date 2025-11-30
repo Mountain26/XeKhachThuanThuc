@@ -56,6 +56,8 @@
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .footer-text {
@@ -88,6 +90,7 @@
 
 .footer-social-button:hover {
   background-color: #d62828;
+  color: #ffffff;
 }
 
 .footer-heading {
