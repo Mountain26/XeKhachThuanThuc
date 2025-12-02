@@ -92,10 +92,18 @@
 .hero-heading-primary {
   color: #d62828;
   font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 .hero-heading-secondary {
   color: #1a1a1a;
   font-size: clamp(2rem, 3vw, 2.75rem);
+}
+.hero-brand-highlight {
+  color: #f59e0b;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 .hero-description {
   max-width: 32rem;
@@ -208,7 +216,7 @@
 .hero-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(214, 40, 40, 0.2), transparent);
+  background: transparent;
 }
 
 .hero-floating {
@@ -310,5 +318,5 @@
 .hero-bus-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(214, 40, 40, 0.15), rgba(255, 255, 255, 0.2));
+  background: transparent;
 }

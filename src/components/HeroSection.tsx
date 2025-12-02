@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { useLanguage } from "../context/LanguageContext";
 
 import heroMainImage from "./assets/xett.jpg";
-import heroBusImage from "./assets/NXTT.png";
+import heroBusImage from "./assets/Orange and Blue Modern Bus Rental Services Facebook Ad (3).png";
 
 import "./HeroSection.css";
 
@@ -34,6 +34,20 @@ export function HeroSection() {
         heroAlt: "Thuận Thực luxury coach cabin",
         busAlt: "Thuận Thực coach exterior",
       };
+
+  const brandSource = "Thuận Thực";
+  const brandDisplay = "THUẬN THỰC";
+  const subtitleParts = copy.subtitle.split(brandSource);
+
+  const subtitleContent = subtitleParts.length > 1
+    ? (
+        <>
+          {subtitleParts[0]}
+          <span className="hero-brand-highlight">{brandDisplay}</span>
+          {subtitleParts.slice(1).join(brandSource)}
+        </>
+      )
+    : copy.subtitle;
 
   const scrollToBooking = () => {
     const el = document.getElementById("tim-chuyen");
@@ -66,7 +80,7 @@ export function HeroSection() {
             {/* Large heading */}
             <div className="hero-heading-group">
               <h1 className="hero-heading-primary">{copy.title}</h1>
-              <h2 className="hero-heading-secondary">{copy.subtitle}</h2>
+              <h2 className="hero-heading-secondary">{subtitleContent}</h2>
             </div>
 
             {/* Subtitle */}

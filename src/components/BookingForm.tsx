@@ -726,11 +726,14 @@ export function BookingForm() {
                       : labels.durationFallback;
                     const distanceValue = route.distance ?? labels.distanceFallback;
                     const imageAltText = `${labels.imageAltPrefix} ${vehicleDisplayName}`;
+                    const baseFareLabel = option.price[language];
                     const fareContent = !isPremium ? (
-                      <span className="booking-route-fare-price">{option.price[language]}</span>
+                      <span className="booking-route-fare-price">{baseFareLabel}</span>
                     ) : null;
-                    const premiumSuites = isPremium && seatOptions.length > 0 ? (
-                      (() => {
+
+                    let premiumFareContent: React.ReactNode = null;
+                    if (isPremium) {
+                      if (seatOptions.length > 0) {
                         const savedSuite = selectedPremiumSuiteByRoute[cardKey];
                         const defaultSuite = seatOptions[0]?.label ?? null;
                         const activeSuiteLabel =
@@ -739,39 +742,81 @@ export function BookingForm() {
                             : defaultSuite;
                         const normalizedSuiteValue = activeSuiteLabel ?? seatOptions[0]?.label ?? undefined;
                         const activeSuite = seatOptions.find((seat) => seat.label === normalizedSuiteValue);
+                        const suitePrice = activeSuite?.price[language] ?? baseFareLabel;
 
-                        return (
-                          <div className="booking-route-suite-selector">
-                            <label className="booking-route-suite-heading" htmlFor={`${cardKey}-suite`}>
-                              {labels.suiteHeading}
-                            </label>
-                            <div className="booking-route-suite-control">
-                              <Select
-                                value={normalizedSuiteValue}
-                                onValueChange={(value) => handlePremiumSuiteChange(cardKey, value)}
+                        premiumFareContent = (
+                          <>
+                            <Select
+                              value={normalizedSuiteValue}
+                              onValueChange={(value) => handlePremiumSuiteChange(cardKey, value)}
+                            >
+                              <SelectTrigger
+                                id={`${cardKey}-suite`}
+                                className="booking-route-suite-trigger booking-route-suite-trigger--compact"
                               >
-                                <SelectTrigger id={`${cardKey}-suite`} className="booking-route-suite-trigger">
-                                  <SelectValue className="booking-route-suite-value" />
-                                </SelectTrigger>
-                                <SelectContent className="booking-route-suite-content">
-                                  {seatOptions.map((seat) => {
-                                    const seatLabel = premiumSeatLabelCopy[seat.label]?.[language] ?? seat.label;
-                                    return (
-                                      <SelectItem key={`${option.vehicleType}-${seat.label}`} value={seat.label}>
-                                        {seatLabel}
-                                      </SelectItem>
-                                    );
-                                  })}
-                                </SelectContent>
-                              </Select>
-                              {activeSuite ? (
-                                <span className="booking-route-suite-price">{activeSuite.price[language]}</span>
-                              ) : null}
-                            </div>
-                          </div>
+                                <SelectValue className="booking-route-suite-value" />
+                              </SelectTrigger>
+                              <SelectContent className="booking-route-suite-content">
+                                {seatOptions.map((seat) => {
+                                  const seatLabel = premiumSeatLabelCopy[seat.label]?.[language] ?? seat.label;
+                                  return (
+                                    <SelectItem key={`${option.vehicleType}-${seat.label}`} value={seat.label}>
+                                      {seatLabel}
+                                    </SelectItem>
+                                  );
+                                })}
+                              </SelectContent>
+                            </Select>
+                            <span className="booking-route-fare-price booking-route-fare-price--premium">{suitePrice}</span>
+                          </>
                         );
-                      })()
+                      } else {
+                        premiumFareContent = (
+                          <span className="booking-route-fare-price booking-route-fare-price--premium">{baseFareLabel}</span>
+                        );
+                      }
+                    }
+
+                    const fareMarkup = (isPremium && !premiumFareContent) ? null : (
+                      <div className={`booking-route-fare${isPremium ? " booking-route-fare--premium" : ""}`}>
+                        {isPremium ? premiumFareContent : fareContent}
+                      </div>
+                    );
+                    const bookingButtonLabel = language === "vi" ? "Đặt vé" : "Book";
+                    const bookingButton = (
+                      <Button
+                        size="sm"
+                        className="booking-route-book-button"
+                        asChild
+                        aria-label={labels.callToBook}
+                      >
+                        <a href="tel:0983250900">
+                          <PhoneCall />
+                          {bookingButtonLabel}
+                        </a>
+                      </Button>
+                    );
+                    const hasDepartureTimes = option.times.length > 0;
+                    const scheduleTimes = hasDepartureTimes ? (
+                      <div className="booking-route-times-copy">
+                        <span className="booking-route-times-label">{labels.departuresLabel}</span>
+                        <div className="booking-route-time-list">
+                          {option.times.map((time) => (
+                            <span key={`${option.vehicleType}-${time}`} className="booking-route-time-chip">
+                              {time}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     ) : null;
+                    const scheduleSection = (hasDepartureTimes || bookingButton) && (
+                      <div
+                        className={`booking-route-times${hasDepartureTimes ? "" : " booking-route-times--no-departures"}`}
+                      >
+                        {scheduleTimes}
+                        {bookingButton}
+                      </div>
+                    );
 
                     return (
                       <motion.div
@@ -848,7 +893,7 @@ export function BookingForm() {
                                 <span className="booking-route-stop-name">{destinationLabel}</span>
                               </div>
                             </div>
-                            {!isPremium ? <div className="booking-route-fare">{fareContent}</div> : null}
+                            {fareMarkup}
                           </div>
 
                           <div className="booking-route-meta">
@@ -862,20 +907,7 @@ export function BookingForm() {
                             </div>
                           </div>
 
-                          {option.times.length > 0 && (
-                            <div className="booking-route-times">
-                              <span className="booking-route-times-label">{labels.departuresLabel}</span>
-                              <div className="booking-route-time-list">
-                                {option.times.map((time) => (
-                                  <span key={`${option.vehicleType}-${time}`} className="booking-route-time-chip">
-                                    {time}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {premiumSuites}
+                          {scheduleSection}
 
                           {seatOptions.length > 0 && !isPremium ? (
                             <div className="booking-route-seats">
@@ -883,10 +915,7 @@ export function BookingForm() {
                               {seatOptions.map((seat) => {
                                 const seatLabel = seatLabelCopy[seat.label]?.[language] ?? seat.label;
                                 return (
-                                  <div
-                                    key={`${option.vehicleType}-${seat.label}`}
-                                    className="booking-route-seat-chip"
-                                  >
+                                  <div key={`${option.vehicleType}-${seat.label}`} className="booking-route-seat-chip">
                                     <span className="booking-route-seat-chip-label">{seatLabel}</span>
                                     <span className="booking-route-seat-chip-price">{seat.price[language]}</span>
                                   </div>
@@ -898,15 +927,6 @@ export function BookingForm() {
                           {option.notes && <p className="booking-route-note">{option.notes[language]}</p>}
 
                           {route.shuttle && <div className="booking-route-shuttle">{route.shuttle}</div>}
-
-                          <div className="booking-route-actions">
-                            <Button size="lg" className="booking-route-primary" asChild aria-label={labels.callToBook}>
-                              <a href="tel:0983250900">
-                                <PhoneCall />
-                                {labels.callToBook}
-                              </a>
-                            </Button>
-                          </div>
                         </div>
                       </motion.div>
                     );
