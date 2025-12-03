@@ -1,0 +1,6 @@
+# Cho phép mọi bot truy cập trang.
+User-agent: *
+# Cho phép thu thập toàn bộ nội dung.
+Allow: /
+# Khai báo vị trí sitemap của website.
+Sitemap: https://xe-khach-thuan-thuc.vercel.app/sitemap.xml
