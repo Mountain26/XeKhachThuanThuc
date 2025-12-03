@@ -93,7 +93,10 @@ function SeoHead() {
       return;
     }
 
-    document.title = meta.title;
+    const placeholderTitle = "www.xehagiang.com";
+    const targetTitle = meta.title;
+
+    document.title = placeholderTitle;
     document.documentElement.setAttribute("lang", language === "vi" ? "vi" : "en");
 
     let metaDescription = document.querySelector<HTMLMetaElement>('meta[name="description"]');
@@ -131,6 +134,15 @@ function SeoHead() {
     };
 
     jsonLdScript.textContent = JSON.stringify(jsonLd);
+
+    const timer = window.setTimeout(() => {
+      document.title = targetTitle;
+    }, 1200);
+
+    return () => {
+      window.clearTimeout(timer);
+      document.title = targetTitle;
+    };
   }, [language, meta]);
 
   return null;
