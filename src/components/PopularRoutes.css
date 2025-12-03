@@ -1,6 +1,23 @@
 .routes-section {
+  position: relative;
   padding: 4rem 0;
   background-color: #f5f5f5;
+  overflow: hidden;
+}
+.routes-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/du-lich-ha-giang-kieu-moi-sau-sat-nhap-171500.webp");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+.routes-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .routes-container {
@@ -46,7 +63,8 @@
 }
 
 .routes-description {
-  color: #475569;
+  color: #1a1a1a;
+  font-weight: 500;
   max-width: 40rem;
   margin: 0 auto;
 }
