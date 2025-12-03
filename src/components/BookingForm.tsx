@@ -68,7 +68,7 @@ const serviceLocations: ServiceLocation[] = [
   { value: "bac-giang", label: { vi: "Bắc Giang", en: "Bac Giang" } },
   { value: "mong-cai", label: { vi: "Móng Cái", en: "Mong Cai" } },
   { value: "quang-ninh", label: { vi: "Quảng Ninh", en: "Quang Ninh" } },
-  { value: "tay-nguyen", label: { vi: "Tây Nguyên", en: "Central Highlands" } },
+  { value: "thai-nguyen", label: { vi: "Thái Nguyên", en: "Thai Nguyen" } },
   { value: "chi-linh", label: { vi: "Chí Linh", en: "Chi Linh" } },
 ];
 
@@ -332,7 +332,7 @@ const routes: RouteInfo[] = [
   },
   {
     origin: "ha-giang",
-    destination: "tay-nguyen",
+    destination: "thai-nguyen",
     duration: "10 giờ",
     distance: "560 km",
     options: [
@@ -359,7 +359,7 @@ const routes: RouteInfo[] = [
     ],
   },
   {
-    origin: "tay-nguyen",
+    origin: "thai-nguyen",
     destination: "ha-giang",
     duration: "10 giờ",
     distance: "560 km",

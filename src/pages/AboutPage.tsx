@@ -36,7 +36,7 @@ const copy = {
       "Chí Linh",
       "Quảng Ninh",
       "Móng Cái",
-      "Tây Nguyên",
+      "Thái Nguyên",
     ],
     routesOutro:
       "Chúng tôi liên tục mở rộng thêm các tuyến mới để phục vụ nhu cầu đi lại ngày càng cao của khách hàng.",
@@ -88,7 +88,7 @@ const copy = {
       "Chi Linh",
       "Quang Ninh",
       "Mong Cai",
-      "Central Highlands",
+      "Thai Nguyen",
     ],
     routesOutro:
       "We continue to explore new routes to meet the growing travel demand of our passengers.",

@@ -122,8 +122,8 @@ function SeoHead() {
       telephone: "+84983250900",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "123 Nguyễn Trãi, phường Trung Văn, quận Nam Từ Liêm",
-        addressLocality: "Hà Nội",
+        streetAddress: "Số 18 Nguyễn Trãi, TP Hà Giang",
+        addressLocality: "Hà Giang",
         addressCountry: "VN",
       },
       areaServed: ["Hà Giang", "Quảng Ninh", "Móng Cái", "Bắc Ninh", "Bắc Giang", "Lạng Sơn"],

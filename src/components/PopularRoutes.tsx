@@ -2,6 +2,7 @@ import * as React from "react";
 import { ArrowDown, ArrowUp, BusFront } from "lucide-react";
 import { Button } from "./ui/button";
 import { AnimatePresence, motion } from "motion/react";
+import type { Variants } from "motion/react";
 import { useLanguage } from "../context/LanguageContext";
 
 import routeImageA from "./assets/xett.jpg";
@@ -106,6 +107,46 @@ export function PopularRoutes() {
   const [showAll, setShowAll] = React.useState(false);
   const visibleRoutes = showAll ? routes : routes.slice(0, 3);
   const hasMoreRoutes = routes.length > 3;
+  const gridVariants: Variants = {
+    collapsed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
+    expanded: {
+      transition: { staggerChildren: 0.08, delayChildren: 0.05 },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.86,
+      rotateX: -18,
+      filter: "blur(12px)",
+      transformOrigin: "top center",
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotateX: 0,
+      filter: "blur(0px)",
+      transition: {
+        type: "spring",
+        damping: 18,
+        stiffness: 280,
+        mass: 0.82,
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.9,
+      rotateX: 12,
+      filter: "blur(6px)",
+      transition: {
+        duration: 0.26,
+        ease: [0.45, 0.05, 0.2, 1],
+      },
+    },
+  };
 
   return (
     <section className="routes-section" id="tuyen-xe">
@@ -123,16 +164,25 @@ export function PopularRoutes() {
         </motion.div>
 
         {/* Routes grid */}
-        <motion.div layout className="routes-grid">
-          <AnimatePresence initial={false}>
+        <motion.div
+          layout
+          className="routes-grid"
+          variants={gridVariants}
+          initial={false}
+          animate={showAll ? "expanded" : "collapsed"}
+          transition={{ layout: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } }}
+        >
+          <AnimatePresence initial={false} mode="popLayout">
             {visibleRoutes.map((route) => (
               <motion.div
                 layout
                 key={route.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 30 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
+                variants={cardVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                transition={{ layout: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
+                style={{ transformPerspective: "900px" }}
                 className="route-card"
               >
               {/* Image placeholder */}

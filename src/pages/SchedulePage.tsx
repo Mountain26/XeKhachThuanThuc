@@ -50,10 +50,10 @@ const copy = {
         ],
       },
       {
-        route: "Tuyến Hà Giang ⇄ Tây Nguyên",
+        route: "Tuyến Hà Giang ⇄ Thái Nguyên",
         legs: [
-          { direction: "Hà Giang → Tây Nguyên", times: ["07:30", "18:00", "18:30", "20:00"] },
-          { direction: "Tây Nguyên → Hà Giang", times: ["10:00", "21:30", "22:15"] },
+          { direction: "Hà Giang → Thái Nguyên", times: ["07:30", "18:00", "18:30", "20:00"] },
+          { direction: "Thái Nguyên → Hà Giang", times: ["10:00", "21:30", "22:15"] },
         ],
       },
       {
@@ -115,10 +115,10 @@ const copy = {
         ],
       },
       {
-        route: "Route Ha Giang ⇄ Central Highlands",
+        route: "Route Ha Giang ⇄ Thai Nguyen",
         legs: [
-          { direction: "Ha Giang → Central Highlands", times: ["07:30", "18:00", "18:30", "20:00"] },
-          { direction: "Central Highlands → Ha Giang", times: ["10:00", "21:30", "22:15"] },
+          { direction: "Ha Giang → Thai Nguyen", times: ["07:30", "18:00", "18:30", "20:00"] },
+          { direction: "Thai Nguyen → Ha Giang", times: ["10:00", "21:30", "22:15"] },
         ],
       },
       {

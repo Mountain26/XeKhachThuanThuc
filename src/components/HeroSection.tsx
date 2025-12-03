@@ -1,10 +1,13 @@
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Phone, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useLanguage } from "../context/LanguageContext";
 
-import heroMainImage from "./assets/xett.jpg";
-import heroBusImage from "./assets/Orange and Blue Modern Bus Rental Services Facebook Ad (3).png";
+import heroMainImage from "./assets/xett2.jpg";
+import heroFrameAlternateImage from "./assets/xe.jpg";
+import heroFrameThirdImage from "./assets/xett.jpg";
+import heroBusImage from "./assets/hero-bus.png";
 
 import "./HeroSection.css";
 
@@ -34,6 +37,27 @@ export function HeroSection() {
         heroAlt: "Thuận Thực luxury coach cabin",
         busAlt: "Thuận Thực coach exterior",
       };
+
+  const heroFrameImages = useMemo(
+    () => [heroMainImage, heroFrameAlternateImage, heroFrameThirdImage],
+    [heroMainImage, heroFrameAlternateImage, heroFrameThirdImage],
+  );
+  const [activeHeroImageIndex, setActiveHeroImageIndex] = useState(0);
+  const hasMountedRef = useRef(false);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveHeroImageIndex((prevIndex) => (prevIndex + 1) % heroFrameImages.length);
+    }, 3000);
+
+    return () => window.clearInterval(intervalId);
+  }, [heroFrameImages]);
+
+  useEffect(() => {
+    hasMountedRef.current = true;
+  }, []);
+
+  const activeHeroImage = heroFrameImages[activeHeroImageIndex];
 
   const brandSource = "Thuận Thực";
   const brandDisplay = "THUẬN THỰC";
@@ -127,7 +151,18 @@ export function HeroSection() {
             {/* Curved image frame for landscape */}
             <div className="hero-media-frame">
               <div className="hero-media-placeholder">
-                <img src={heroMainImage} alt={copy.heroAlt} />
+                <AnimatePresence mode="sync">
+                  <motion.img
+                    key={activeHeroImage}
+                    src={activeHeroImage}
+                    alt={copy.heroAlt}
+                    initial={hasMountedRef.current ? { opacity: 0, scale: 0.98 } : { opacity: 1, scale: 1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.02 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                </AnimatePresence>
               </div>
               {/* Decorative overlay */}
               <div className="hero-media-overlay" />

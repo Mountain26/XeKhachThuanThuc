@@ -304,6 +304,23 @@
   display: block;
 }
 
+@media (max-width: 768px) {
+  .hero-bus-frame {
+    aspect-ratio: unset;
+  }
+
+  .hero-bus-placeholder {
+    position: relative;
+    inset: unset;
+  }
+
+  .hero-bus-placeholder img {
+    height: auto;
+    object-fit: contain;
+    background-color: transparent;
+  }
+}
+
 .hero-bus-title {
   color: #94a3b8;
   font-size: 1.125rem;

@@ -1,7 +1,7 @@
 import { Phone, Mail, MapPin, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import footerLogo from "./assets/Thuận Thực-01.png";
+import footerLogo from "./assets/footer-logo.png";
 import { FacebookPageEmbed } from "./FacebookPageEmbed";
 import "./Footer.css";
 
@@ -17,7 +17,7 @@ const copy = {
     terms: "Điều khoản sử dụng",
     privacy: "Chính sách bảo mật",
     contact: "Liên hệ",
-    address: "15 Nguyễn Trãi, TP Hà Giang",
+    address: "Số 18 Nguyễn Trãi, TP Hà Giang",
     hotline: "0983 250 900",
     email: "Congtytnhhvtthuanthuc@gmail.com",
     facebookLabel: "Facebook",
@@ -41,7 +41,7 @@ const copy = {
     terms: "Terms of use",
     privacy: "Privacy policy",
     contact: "Contact",
-    address: "15 Nguyen Trai, Ha Giang City",
+    address: "18 Nguyen Trai, Ha Giang City",
     hotline: "0983 250 900",
     email: "Congtytnhhvtthuanthuc@gmail.com",
     facebookLabel: "Facebook",
