@@ -7,7 +7,7 @@ const copy = {
     title: "Giới thiệu Nhà xe Thuận Thực",
     updated: "Cập nhật tháng 12/2025",
     intro: [
-      "Nhà xe Thuận Thực là đơn vị vận tải hành khách hoạt động hơn 10 năm trên các tuyến trọng điểm khu vực miền Bắc và miền Trung.",
+      "Nhà xe Thuận Thực là đơn vị vận tải hành khách hoạt động hơn 10 năm trên các tuyến trọng điểm khu vực miền Bắc.",
       "Chúng tôi hướng đến mô hình nhà xe hiện đại với triết lý vận hành:",
     ],
     motto: "“An toàn – Đúng giờ – Tận tâm.”",
@@ -59,7 +59,7 @@ const copy = {
     title: "About Thuận Thực Coachlines",
     updated: "Updated December 2025",
     intro: [
-      "Thuận Thực Coachlines has provided inter-provincial passenger transport for more than a decade across key Northern and Central Viet Nam corridors.",
+      "Thuận Thực Coachlines has provided inter-provincial passenger transport for more than a decade across key Northern Viet Nam corridors.",
       "We pursue a modern coach operator model founded on the operating philosophy:",
     ],
     motto: "“Safety – Punctuality – Service at heart.”",
