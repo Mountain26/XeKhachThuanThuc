@@ -93,7 +93,7 @@ function SeoHead() {
       return;
     }
 
-    const placeholderTitle = "www.xehagiang.com";
+    const placeholderTitle = "www.xehagiang.me";
     const targetTitle = meta.title;
 
     document.title = placeholderTitle;
