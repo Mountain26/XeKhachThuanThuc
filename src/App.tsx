@@ -119,10 +119,14 @@ function SeoHead() {
     const origin = typeof window !== "undefined" ? window.location.origin : "";
     const jsonLd = {
       "@context": "https://schema.org",
-      "@type": "BusOrCoach",
+      "@type": "LocalBusiness",
       name: language === "vi" ? "Nhà xe Thuận Thực" : "Thuận Thực Coachlines",
       url: origin,
       telephone: "+84983250900",
+      description:
+        language === "vi"
+          ? "Nhà xe Thuận Thực vận hành các tuyến Hà Giang – Quảng Ninh – Móng Cái – Bắc Ninh với xe giường nằm, cung điện và dịch vụ trung chuyển tiện lợi."
+          : "Thuận Thực Coachlines serves Ha Giang – Quang Ninh – Mong Cai – Bac Ninh routes with sleeper coaches, luxury cabins, and convenient transfer services.",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Số 18 Nguyễn Trãi, TP Hà Giang",
