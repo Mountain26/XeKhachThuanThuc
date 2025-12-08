@@ -93,19 +93,63 @@ function SeoHead() {
       return;
     }
 
-    const placeholderTitle = "www.xehagiang.me";
-    const targetTitle = meta.title;
+    const siteName = language === "vi" ? "Xe Khách Thuận Thực" : "Thuận Thực Coachlines";
+    const origin = typeof window !== "undefined" && window.location.origin ? window.location.origin : "https://xehagiang.me";
 
-    document.title = placeholderTitle;
+    document.title = meta.title;
     document.documentElement.setAttribute("lang", language === "vi" ? "vi" : "en");
 
-    let metaDescription = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement("meta");
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", meta.description);
+    const upsertMeta = (attribute: "name" | "property", value: string) => {
+      let tag = document.querySelector<HTMLMetaElement>(`meta[${attribute}="${value}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attribute, value);
+        document.head.appendChild(tag);
+      }
+      return tag;
+    };
+
+    upsertMeta("name", "description").setAttribute("content", meta.description);
+    upsertMeta("property", "og:title").setAttribute("content", meta.title);
+    upsertMeta("property", "og:description").setAttribute("content", meta.description);
+    upsertMeta("property", "og:site_name").setAttribute("content", siteName);
+    upsertMeta("property", "og:url").setAttribute("content", `${origin}${location.pathname}`);
+    upsertMeta("name", "twitter:title").setAttribute("content", meta.title);
+    upsertMeta("name", "twitter:description").setAttribute("content", meta.description);
+    upsertMeta("name", "application-name").setAttribute("content", siteName);
+    upsertMeta("name", "apple-mobile-web-app-title").setAttribute("content", siteName);
+
+    const ensureLink = (
+      rel: string,
+      attrs: { href: string; sizes?: string; type?: string }
+    ) => {
+      const selectors = [`link[rel="${rel}"]`];
+      if (attrs.sizes) {
+        selectors.push(`[sizes="${attrs.sizes}"]`);
+      }
+      if (attrs.type) {
+        selectors.push(`[type="${attrs.type}"]`);
+      }
+      let link = document.querySelector<HTMLLinkElement>(selectors.join(""));
+      if (!link) {
+        link = document.createElement("link");
+        link.rel = rel;
+        if (attrs.sizes) {
+          link.sizes = attrs.sizes;
+        }
+        if (attrs.type) {
+          link.type = attrs.type;
+        }
+        document.head.appendChild(link);
+      }
+      link.href = attrs.href;
+    };
+
+    ensureLink("icon", { href: "/favicon.png", type: "image/png" });
+    ensureLink("icon", { href: "/favicon-32x32.png", sizes: "32x32", type: "image/png" });
+    ensureLink("icon", { href: "/favicon-192x192.png", sizes: "192x192", type: "image/png" });
+    ensureLink("shortcut icon", { href: "/favicon.ico" });
+    ensureLink("apple-touch-icon", { href: "/apple-touch-icon.png", sizes: "180x180" });
 
     const scriptId = "structured-data-bus";
     let jsonLdScript = document.getElementById(scriptId) as HTMLScriptElement | null;
@@ -116,11 +160,11 @@ function SeoHead() {
       document.head.appendChild(jsonLdScript);
     }
 
-    const origin = typeof window !== "undefined" ? window.location.origin : "";
     const jsonLd = {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      name: language === "vi" ? "Nhà xe Thuận Thực" : "Thuận Thực Coachlines",
+      "@type": ["LocalBusiness", "WebSite"],
+      name: siteName,
+      alternateName: language === "vi" ? "Nhà xe Thuận Thực" : "Thuan Thuc Bus",
       url: origin,
       telephone: "+84983250900",
       description:
@@ -138,16 +182,7 @@ function SeoHead() {
     };
 
     jsonLdScript.textContent = JSON.stringify(jsonLd);
-
-    const timer = window.setTimeout(() => {
-      document.title = targetTitle;
-    }, 1200);
-
-    return () => {
-      window.clearTimeout(timer);
-      document.title = targetTitle;
-    };
-  }, [language, meta]);
+  }, [language, location.pathname, meta]);
 
   return null;
 }
