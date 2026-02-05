@@ -74,9 +74,9 @@ export function ContactButtons() {
 
           {/* Liên hệ Zalo */}
           <motion.a
-            href="http://zalo.me/nhaxethuanthuc23"
+            href="https://zalo.me/nhaxethuanthuc23"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

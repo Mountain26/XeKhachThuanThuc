@@ -145,6 +145,10 @@ function SeoHead() {
       link.href = attrs.href;
     };
 
+    // Ensure a canonical URL so Google indexes the preferred domain and path
+    const canonicalUrl = `${origin}${location.pathname}${location.search || ""}`;
+    ensureLink("canonical", { href: canonicalUrl });
+
     ensureLink("icon", { href: "/favicon.png", type: "image/png" });
     ensureLink("icon", { href: "/favicon-32x32.png", sizes: "32x32", type: "image/png" });
     ensureLink("icon", { href: "/favicon-192x192.png", sizes: "192x192", type: "image/png" });

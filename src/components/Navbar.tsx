@@ -104,7 +104,7 @@ export function Navbar() {
           </div>
           <div className="navbar-actions">
             <div className="navbar-language-mobile">{renderLanguageButton("navbar-language-button--mobile")}</div>
-            <button className="navbar-menu-button">
+            <button type="button" className="navbar-menu-button" aria-label={language === "vi" ? "Mở menu" : "Open menu"}>
               <Menu />
             </button>
           </div>
